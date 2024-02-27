@@ -20,9 +20,7 @@ BPurple='\e[1;35m'      # Purple
 BCyan='\e[1;36m'        # Cyan
 BWhite='\e[1;37m'       # White
 
-
 #######################################################
-
 
 echo -ne '\033c'
 trap RM_HT_FOLDER SIGINT SIGQUIT SIGTSTP
@@ -57,7 +55,6 @@ sleep 0.1
 
 #######################################################
 
-
 echo -e "${Yellow}     +${White}-------------------------------------------------------------------${Yellow}+"
 echo -e "${White}     | ${Yellow} ID ${White} |                   ${BPurple}   Browser Name                       ${White}   |"
 echo -e "${Yellow}     +${White}-------------------------------------------------------------------${Yellow}+"
@@ -81,8 +78,8 @@ case $choice in
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Etc/UTC \
-            -p 3000:3000 \
-            -p 3001:3001 \
+            -p 127.0.0.1:3000:3000 \
+            -p 127.0.0.1:3001:3001 \
             -v /chromium:/config \
             --shm-size="7gb" \
             --restart unless-stopped \
@@ -96,8 +93,8 @@ case $choice in
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Etc/UTC \
-            -p 3000:3000 \
-            -p 3001:3001 \
+            -p 127.0.0.1:3000:3000 \
+            -p 127.0.0.1:3001:3001 \
             -v /firefox:/config \
             --shm-size="7gb" \
             --restart unless-stopped \
@@ -111,8 +108,8 @@ case $choice in
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Etc/UTC \
-            -p 3000:3000 \
-            -p 3001:3001 \
+            -p 127.0.0.1:3000:3000 \
+            -p 127.0.0.1:3001:3001 \
             -v /opera:/config \
             --shm-size="7gb" \
             --restart unless-stopped \
@@ -126,8 +123,8 @@ case $choice in
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Etc/UTC \
-            -p 3000:3000 \
-            -p 3001:3001 \
+            -p 127.0.0.1:3000:3000 \
+            -p 127.0.0.1:3001:3001 \
             -v /mullvad-browser:/config \
             --shm-size="7gb" \
             --restart unless-stopped \
@@ -152,17 +149,15 @@ echo ""
 sleep 0.1
 echo -e "    ${Red} ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Blue}⢀⣠⣴⣾⣿⣿⣿⣶⣄⡀⠀"
 sleep 0.1
-echo -e "    ${Red} ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Blue}⣀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄"
+echo -e "    ${Red} ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Blue}⣀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄"
 sleep 0.1
-echo -e "    ${Red} ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Blue}⢀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷"
+echo -e "    ${Red} ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Blue}⢀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷"
 sleep 0.1
 echo -e "    ${Red} ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤${Blue}⠾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠉⠙⣿⣿⡿"
 sleep 0.1
 echo -e "    ${Red} ⠀⠀⠀⠀⠀⢀⣠⠶⠛⠁⠀⠀${Blue}⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣄⣠⣿⡿⠁"
 sleep 0.1
-echo -e "    ${Red} ⠀⠀⣀⡤⠞⠉⠀⠀⠀⠀⠀⠀${Blue}⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀"
-sleep 0.1
-echo -e "    ${Red} ⢀⡾⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Blue}⠙⢿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠀"
+echo -e "    ${Red} ⢀⡾⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Blue}⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀"
 sleep 0.1
 echo -e "    ${Red} ⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⡀${Blue}⠙⢿⣿⡿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀"
 sleep 0.1
